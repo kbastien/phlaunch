@@ -1,0 +1,28 @@
+ {
+  "name": "PH Launch",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A chrome extension that pops new tabs for the top twenty products on Product Hunt.",
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "assets/*.png",
+    "assets/*.jpg",
+    "scripts/*.js",
+    "bower_components/jquery/dist/jquery.min.map"],
+  "browser_action": {
+    "name": "Manipulate DOM",
+    "icons": ["assets/icon.png"],
+    "default_icon": "assets/icon.png"
+  },
+  "icons": { "16": "assets/logo16.png",
+           "48": "assets/logo48.png",
+          "128": "assets/logo128.png" },
+  "content_scripts": [ {
+    "js": [ "bower_components/jquery/dist/jquery.min.js" ],
+    "matches": ["<all_urls>"]
+  }],
+  "permissions": ["<all_urls>"]
+}
